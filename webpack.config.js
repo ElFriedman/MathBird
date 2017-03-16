@@ -20,7 +20,6 @@ module.exports = {
                 loader: 'source-map-loader'
             }, {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ["es2015"]
@@ -28,5 +27,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [new BabiliPlugin()]
+    plugins: [new BabiliPlugin()],
+    devtool: "source-map"
 };

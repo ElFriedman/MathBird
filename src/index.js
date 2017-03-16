@@ -1,6 +1,6 @@
-import "mathsteps";
+import {simplifyExpression} from "mathsteps";
 
-const steps = mathsteps.simplifyExpression('2x + 2x + x + x');
+const steps = simplifyExpression('2x + 2x + x + x');
 
 steps.forEach(step => {
     console.log("before change: " + step.oldNode);         // before change: 2 x + 2 x + x + x
