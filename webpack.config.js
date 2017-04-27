@@ -2,7 +2,7 @@ var webpack = require("webpack");
 const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/hintapi.js',
     output: {
         path: './dist',
         filename: 'mathbird.bundle.js'
