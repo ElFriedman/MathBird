@@ -2,7 +2,7 @@ var webpack = require("webpack");
 const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = {
-    entry: './src/hintapi.js',
+    entry: './src/index.js',
     output: {
         path: './dist',
         filename: 'mathbird.bundle.js'
@@ -14,11 +14,8 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
-            }, {
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'source-map-loader'
-            }, {
+            },
+            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 query: {
@@ -28,5 +25,5 @@ module.exports = {
         ]
     },
     plugins: [new BabiliPlugin()],
-    devtool: "source-map"
+    // devtool: "source-map"
 };

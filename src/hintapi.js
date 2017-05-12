@@ -1,5 +1,3 @@
-import {simplifyExpression, solveEquation, ChangeTypes} from "mathsteps";
-
 function getHint(step) {
     switch (step.changeType) {
         case "NO_CHANGE":
@@ -25,4 +23,12 @@ function getHint(step) {
         default:
             return "Error: No Hint Specified";
     }
+}
+
+export default function getHints(steps) {
+    let hints = [];
+    steps.forEach((step) => {
+        hints.push(getHint(step));
+    });
+    return hints;
 }
