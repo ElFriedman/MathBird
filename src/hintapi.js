@@ -25,10 +25,12 @@ function getHint(step) {
     }
 }
 
-export default function getHints(steps) {
-    let hints = [];
+function getHints(steps) {
+    const hints = [];
     steps.forEach((step) => {
         hints.push(getHint(step));
     });
     return hints;
 }
+
+module.exports = getHints;

@@ -24,6 +24,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [new BabiliPlugin()],
+    //plugins: [new BabiliPlugin()],
     // devtool: "source-map"
 };
