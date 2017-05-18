@@ -14,11 +14,8 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
-            }, {
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'source-map-loader'
-            }, {
+            },
+            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 query: {
@@ -27,6 +24,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [new BabiliPlugin()],
-    devtool: "source-map"
+    //plugins: [new BabiliPlugin()],
+    // devtool: "source-map"
 };
