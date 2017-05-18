@@ -1,0 +1,3 @@
+[submodule "mathbirdcli"]
+	path = mathbirdcli
+	url = https://audeer2019@bitbucket.org/mathbird/mathbirdcli.git
