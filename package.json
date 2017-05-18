@@ -1,6 +1,6 @@
 {
   "name": "mathbird",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is the MathBird Repository.",
   "main": "index.js",
   "scripts": {
