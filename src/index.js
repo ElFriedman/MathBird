@@ -2,9 +2,7 @@ const mathsteps = require("mathsteps");
 const simplifyExpression = mathsteps.simplifyExpression;
 const solveEquation = mathsteps.solveEquation;
 const getHints = require("./hintapi");
-function isValid(problem) {
-    return true;
-}
+const isValid = require("./errorChecker/index")
 
 function hintSolve(problem, type, callback) {
     if (isValid(problem)) {
