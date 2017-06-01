@@ -1,6 +1,4 @@
 const tokenize = require("./tokenizer");
-const expression = 'sin(x)';
-const problemType = 'SOLVE'
 var leftParens = 0;
 var rightParens = 0;
 var equalSign = 0;
@@ -280,6 +278,5 @@ function isValid(problem, probType) {
   }
   return true;
 }
-console.log(isValid(expression, problemType));
 
 module.exports = isValid;
