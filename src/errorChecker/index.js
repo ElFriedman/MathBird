@@ -1,5 +1,5 @@
 const tokenize = require("./tokenizer");
-const expression = '(x)=(1)';
+const expression = 'sin(x)';
 const problemType = 'SOLVE'
 var leftParens = 0;
 var rightParens = 0;
@@ -159,7 +159,7 @@ function postFunction(token) {
     //Return problem error here
     return false;
   } else if (type == 'Variable') {
-    //Return problem error here{
+    //Return problem error here
     return false;
   } else if (type == 'Left Parenthesis') {
     leftParens++;
@@ -180,7 +180,7 @@ function postFunction(token) {
 }
 
 
-function postPlusOrMinus(token) {
+function postPlusOrMinusOrTimes(token) {
   const type = token.type;
   const value = token.value;
   if (type == 'Literal') {
@@ -238,8 +238,9 @@ function isValid(problem, probType) {
         return false;
       }
     } else if (tokens[i - 1].type == 'Operator') {
-      if (tokens[i - 1].value == '+' || tokens[i - 1].value == '-') {
-        if (!postPlusOrMinus(token)) {
+      if (tokens[i - 1].value == '+' || tokens[i - 1].value == '-' || tokens[i -
+          1].value == '*') {
+        if (!postPlusOrMinusOrTimes(token)) {
           return false;
         }
       } else if (tokens[i - 1].value == '=') {
@@ -264,10 +265,21 @@ function isValid(problem, probType) {
             return false;
           }
         }
+      } else if (tokens[i - 1].value == '/' || tokens[i - 1].value == '^') {
+        if (!firstToken(token)) {
+          return false;
+        }
       }
+    }
+  }
+  if (probType == 'SOLVE') {
+    if (equalSign == 0) {
+      //Return problem error here
+      return false;
     }
   }
   return true;
 }
+console.log(isValid(expression, problemType));
 
 module.exports = isValid;
