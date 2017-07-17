@@ -20,6 +20,8 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/mathbird/mathbird#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
     "mathsteps": "^0.1.5"
   },
   "devDependencies": {
