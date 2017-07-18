@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 app.route("/solve")
 .post((req,res) => {
+    console.log(req.body);
     let problem = req.body.problem;
     let type = req.body.type;
     hintSolve(problem, type, (hints, err) => {
