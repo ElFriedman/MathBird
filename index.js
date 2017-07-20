@@ -1,7 +1,6 @@
 'use strict';
 const express = require("express");
 const bodyParser = require("body-parser");
-const https = require("https");
 const app = express();
 const hintSolve = require("./src/index.js");
 
@@ -15,11 +14,11 @@ app.use(bodyParser.json());
 app.route("/solve")
 .post((req,res) => {
     console.log(req.body);
-    let problem = req.body.problem;
-    let type = req.body.type;
+    const problem = req.body.problem;
+    const type = req.body.type;
     hintSolve(problem, type, (hints, err) => {
         if (err) throw err;
-        res.send(hints);
+        res.send({hints});
     });
 });
 
