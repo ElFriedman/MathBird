@@ -1,10 +1,6 @@
 const tokenize = require("./tokenizer");
 const expression = 'sin(x)';
-const problemType = 'SOLVE'
-var leftParens = 0;
-var rightParens = 0;
-var equalSign = 0;
-
+const problemType = 'SOLVE';
 
 function firstToken(token) {
   const type = token.type;
@@ -210,6 +206,9 @@ function postPlusOrMinusOrTimes(token) {
 
 function isValid(problem, probType) {
   tokens = tokenize(problem);
+  let leftParens = 0;
+  let rightParens = 0;
+  let equalSign = 0;
   console.log(tokens);
   for (const i in tokens) {
     const token = tokens[i];
