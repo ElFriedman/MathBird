@@ -17,7 +17,7 @@ app.route("/solve")
     const problem = req.body.problem;
     const type = req.body.type;
     hintSolve(problem, type, (hints, err) => {
-        if (err) res.code(200).end();
+        if (err) res.code(200).send(err);
         res.send({hints});
     });
 });
