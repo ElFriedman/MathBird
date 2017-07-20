@@ -209,7 +209,7 @@ function postPlusOrMinusOrTimes(token) {
 
 
 function isValid(problem, probType) {
-  tokens = tokenize(problem);
+  xtokens = tokenize(problem);
   console.log(tokens);
   for (const i in tokens) {
     const token = tokens[i];

@@ -2,6 +2,10 @@
   "name": "mathbird",
   "version": "1.0.0",
   "description": "This is the MathBird Repository.",
+  "engines": {
+    "node": "8.1.2",
+    "npm": "5.3.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
