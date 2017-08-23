@@ -7,7 +7,7 @@ const hintSolve = require("./src/index.js");
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(cors())
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
     extended: true
